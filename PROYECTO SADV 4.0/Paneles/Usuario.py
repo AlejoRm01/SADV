@@ -1,0 +1,35 @@
+import sys,time, locale, ast, re, os
+from Utiles.Conexion import borrarUs, agregarUs, obtenerUsuarios
+from UI.UI_Usuario import *
+
+
+class Usuario(): 
+    def __init__(self):
+        self.UIu = UI_Usuario(obtenerUsuarios())
+        self.UIu.sigBorrar.connect(self.borrarUsuario)
+        self.UIu.sigAggUsuario.connect(self.aggUsuario)       
+        #-----------------FUNCIONES-----------------
+    def show(self):
+        self.UIu.show()
+        
+    def borrarUsuario(self):
+        usuario = self.UIu.getCBusuarios()
+        buttonReply = self.UIu.throwMsgProcesoEliminar()
+        if buttonReply == self.UIu.getQMrespuesta():
+            try:
+                borrarUs(usuario)
+                self.UIu.throwMsgCompletado()
+            except:
+                self.UIu.throwMsgError()
+
+    def aggUsuario(self):
+        usu = self.UIu.getLEusuario()
+        con = self.UIu.getLEcontrasena()
+        tipo = True if (self.UIu.getCBtipoCuenta() == "Administrador/a") else False
+        try:
+            agregarUs(usu, con, tipo)
+            self.UIu.throwMsgCompletado()
+        except:
+            self.UIu.throwMsgErrorCreacion()
+        
+    
