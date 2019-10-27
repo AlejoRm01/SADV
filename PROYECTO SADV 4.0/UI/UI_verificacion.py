@@ -48,14 +48,11 @@ class UI_verificacion (QMainWindow):
             
         row = -1
         self.tablaClientes.setRowCount(row + 1)
-
-        for data in self.informacionCliente:
-            row += 1
-            self.tablaClientes.setRowCount(row + 1)
-
-            self.tablaClientes.setItem(row, 0, QTableWidgetItem(data[2]))
-            self.tablaClientes.setItem(row, 1, QTableWidgetItem(data[3]))
-            self.tablaClientes.setItem(row, 2, QTableWidgetItem(data[4]))
+        row += 1
+        self.tablaClientes.setRowCount(row + 1)
+        self.tablaClientes.setItem(row, 0, QTableWidgetItem(self.informacionCliente[2]))
+        self.tablaClientes.setItem(row, 1, QTableWidgetItem(self.informacionCliente[3]))
+        self.tablaClientes.setItem(row, 2, QTableWidgetItem(self.informacionCliente[4]))
             
     # -----------------TablaClientes2-------------------------
         self.tablaClientes_2.setEditTriggers(QAbstractItemView.NoEditTriggers)
@@ -71,14 +68,12 @@ class UI_verificacion (QMainWindow):
             
         row = -1
         self.tablaClientes_2.setRowCount(row + 1)
+        row += 1
+        self.tablaClientes_2.setRowCount(row + 1)
 
-        for data in self.informacionCliente:
-            row += 1
-            self.tablaClientes_2.setRowCount(row + 1)
-
-            self.tablaClientes_2.setItem(row, 0, QTableWidgetItem(data[6]))
-            self.tablaClientes_2.setItem(row, 1, QTableWidgetItem(data[7]))
-            self.tablaClientes_2.setItem(row, 2, QTableWidgetItem(data[5]))
+        self.tablaClientes_2.setItem(row, 0, QTableWidgetItem(self.informacionCliente[6]))
+        self.tablaClientes_2.setItem(row, 1, QTableWidgetItem(self.informacionCliente[7]))
+        self.tablaClientes_2.setItem(row, 2, QTableWidgetItem(self.informacionCliente[5]))
 
         # -----------------TablaClientes3-------------------------
         self.tablaClientes_3.setEditTriggers(QAbstractItemView.NoEditTriggers)
@@ -91,17 +86,15 @@ class UI_verificacion (QMainWindow):
     # -----------------Ancho columnas-----------------
         for indice, ancho in enumerate((200, 160, 159), start=0):
             self.tablaClientes_3.setColumnWidth(indice, ancho)
-        
+            
         row = -1
         self.tablaClientes_3.setRowCount(row + 1)
+        row += 1
+        self.tablaClientes_3.setRowCount(row + 1)
 
-        for data in self.informacionCliente:
-            row += 1
-            self.tablaClientes_3.setRowCount(row + 1)
-
-            self.tablaClientes_3.setItem(row, 0, QTableWidgetItem(data[8]))
-            self.tablaClientes_3.setItem(row, 1, QTableWidgetItem(data[10]))
-            self.tablaClientes_3.setItem(row, 2, QTableWidgetItem(data[0]))
+        self.tablaClientes_3.setItem(row, 0, QTableWidgetItem(self.informacionCliente[8]))
+        self.tablaClientes_3.setItem(row, 1, QTableWidgetItem(self.informacionCliente[10]))
+        self.tablaClientes_3.setItem(row, 2, QTableWidgetItem(self.informacionCliente[0]))
 
     # -----------------BOTONES-----------------
         self.botonRegresar.clicked.connect(self.abrirVenta)
@@ -136,10 +129,6 @@ class UI_verificacion (QMainWindow):
         QMessageBox.information(self, "Mensaje", "Proceso interrumpido, No se pudo realizar la venta", QMessageBox.Ok)
     def throwMsgErrorCorreo(self):
         QMessageBox.information(self, 'Mensaje', "Error verifique correo ingresado", QMessageBox.Ok)
-   
-    # -----------------Varios-----------------
-    def toText(self,tmp):
-        return self.tmp.text()
    
     # -----------------adds-----------------
     def addLWcodigos(self,tmp):

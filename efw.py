@@ -1,3 +1,0 @@
-"""
-MI mama chimbea mucho
-"""

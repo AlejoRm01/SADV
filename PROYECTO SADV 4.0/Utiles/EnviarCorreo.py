@@ -108,6 +108,3 @@ def mandarCorreoFactura(correo, pathArchivo):
     with smtplib.SMTP_SSL('smtp.gmail.com', 465) as smtp:
         smtp.login(EMAIL_ADDRESS, EMAIL_PASSWORD)
         smtp.send_message(msg)
-
-#mandarCorreoHtml('arodriguem@hotmail.com')
-#mandarCorreoFactura('alejo543rm@gmail.com', 'Facturas/1000748121.pdf')

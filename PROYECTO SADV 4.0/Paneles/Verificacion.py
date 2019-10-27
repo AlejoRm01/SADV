@@ -11,14 +11,13 @@ def sizeOf(tmp):
 class Verificacion():
 
     def __init__(self,tmp):
-        self.informacionCliente = tmp[0]
+        self.informacionCliente = tmp[0][0]
         self.informacionVenta = tmp[1]
         self.UIv = UI_verificacion(self.informacionCliente)
         self.UIv.sigFinalizarVenta.connect(self.finalizarVenta)
         self.UIv.sigHacerFactura.connect(self.hacerFactura)
         self.UIv.sigMandarCorreo.connect(self.mandarCorreo)
         self.UIv.sigMandarFacturaCorreo.connect(self.mandarFacturaCorreo)
-        
         
     # -----------------ListaCodigos-----------------
         # producto, cantidad, precio
@@ -57,7 +56,6 @@ class Verificacion():
             self.UIv.throwMsgErrorProceso()
 
     def hacerFactura(self):
-      
         pathNombre = self.informacionCliente[3]
         buttonReply = self.UIv.getRDialog()
         
@@ -70,26 +68,25 @@ class Verificacion():
         self.UIv.enableBTfacturaCorreo(True)
 		
     def mandarCorreo(self):
-        codigos = []
-        for index in range(sizeOf(self.ListaCodigos)):
-            codigos.append(self.UIv.toText(self.ListaCodigos.item(index)))
-        hacerCodigos(codigos)
+        hacerCodigos(self.informacionVenta)
         try:
-            self.UIv.throwMsgTerminado()
             mandarCorreoHtml(self.informacionCliente[8])
+            self.UIv.enableBTcorreo(False)
+            self.UIv.throwMsgTerminado()
         except:
+            self.UIv.enableBTcorreo(True)
             self.UIv.throwMsgErrorCorreo()
 
     def mandarFacturaCorreo(self):
-        codigos = []
-        for index in range(sizeOf(self.ListaCodigos)):
-            codigos.append(self.UIv.toText(self.ListaCodigos.item(index)))
-        hacerCodigos(codigos)
+        hacerCodigos(self.informacionVenta)
         pathArchivo = "Facturas/" + self.informacionCliente[3] + ".pdf"
+        
         try:
-            self.UIv.throwMsgTerminado()
             mandarCorreoFactura(self.informacionCliente[8], pathArchivo)
+            self.UIv.enableBTfacturaCorreo(False)
+            self.UIv.throwMsgTerminado()
         except:
+            self.UIv.enableBTfacturaCorreo(True)
             self.UIv.throwMsgErrorCorreo()
     
     

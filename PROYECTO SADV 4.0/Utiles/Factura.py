@@ -219,7 +219,7 @@ def generarFactura(PathNombre, lista, informacionCliente, consola):
 
 def hacerCodigos(lista):
     w, h = A4
-    c = canvas.Canvas("TusCodigos.pdf", pagesize=A4)
+    c = canvas.Canvas("Codigos/TusCodigos.pdf", pagesize=A4)
     lista = lista 
     text = c.beginText(50, h - 50)
     
