@@ -4,7 +4,6 @@ from UI.UI_compra import *
 
 """
 Clase Compra
-Mama
 En esta clase se realiza  toda la actividad de realizar una compra, confirmar comprar
 confirmar envio de correos y confirmar la genereacion de facturas.
 """
