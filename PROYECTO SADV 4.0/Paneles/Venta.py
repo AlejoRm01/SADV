@@ -1,6 +1,6 @@
 import  locale, ast, re, os
 from Utiles.Factura import fecha as getFecha
-from Utiles.Conexion import verificarCodigos, enviarCodigos, enviarCompra, obtenerCodigosParaVender, enviarVenta, obtenerProductos
+from Utiles.Conexion import verificarCodigos, getProductos
 from PyQt5 import QtCore
 from UI.UI_venta import *
     
@@ -14,7 +14,7 @@ class Venta():
         self.total = 0
         self.subtotal = 0
         self.vdescuento = 0
-        self.UIv.addCBdescripcion(obtenerProductos())
+        self.UIv.addCBdescripcion(getProductos())
         self.UIv.sigAceptar.connect(self.aceptar)
         self.UIv.sigEliminar.connect(self.eliminar)
         self.UIv.sigEliminarTodo.connect(self.eliminarTodo)

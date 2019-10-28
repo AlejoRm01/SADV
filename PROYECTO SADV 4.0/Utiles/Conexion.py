@@ -6,7 +6,7 @@ def conectar():
    db = client['Diem']
    return db
 
-def obtenerProductos():
+def getProductos():
    db = conectar()
    result = db.Productos.find()
    productos = []
@@ -14,7 +14,7 @@ def obtenerProductos():
       productos.append(i['Descripcion'])
    return productos
 
-def enviarCompra(factura, descripcion, socio, moneda, tasa, fecha, valorLote, codigos):
+def setCompra(factura, descripcion, socio, moneda, tasa, fecha, valorLote, codigos):
    db = conectar()
    db.Compras.insert({
       'Factura': factura,
@@ -27,7 +27,7 @@ def enviarCompra(factura, descripcion, socio, moneda, tasa, fecha, valorLote, co
       'Codigos': codigos
    })
 
-def obtenerCodigosActualizacion(descripcion):
+def getCodigosActualizacion(descripcion):
    db = conectar()
    result = db.Productos.find({'Descripcion': descripcion})
    codigos = []
@@ -40,7 +40,7 @@ def obtenerCodigosActualizacion(descripcion):
 
    return denominacion, descripcion, stockMinimo, codigos
 
-def enviarCodigos(codigos, descripcion):
+def setCodigos(codigos, descripcion):
 
    db = conectar()
    denominacion, descripcion, stockMinimo, codigosViejos = obtenerCodigosActualizacion(descripcion)
@@ -56,7 +56,7 @@ def enviarCodigos(codigos, descripcion):
       'Codigos': codigos
    })
 
-def obtenerInventario():
+def getInventario():
    db = conectar()
    result = db.Productos.find()
    inventario = []
@@ -71,7 +71,7 @@ def obtenerInventario():
          inventario.append([cantidad,denominacion,acumulado,i['Descripcion'],stockMinimo,'No suficiente'])
    return inventario
 
-def obtenerCodigosParaVender(producto, cantidad):
+def getCodigosParaVender(producto, cantidad):
    db = conectar()
    denominacion, descripcion, stockMinimo, codigosViejos = obtenerCodigosActualizacion(producto)
 
@@ -110,7 +110,7 @@ def verificarCodigos(codigos):
          else:
             return ['False']
 
-def enviarVenta(arrC, arrV):
+def setVenta(arrC, arrV):
    #FECHA, NUMERO FACTURA, CLIENTE, IDENTIFICACION, CELULAR, DEPARTAMENTO, TELEFONO, DIRECCION, CORREO, DESCUENTO, TPAGO
    cliente = arrC[0]
    venta = arrV[0]
@@ -130,7 +130,7 @@ def enviarVenta(arrC, arrV):
       'Productos': venta
    })
 
-def obtenerUsuarios():
+def getUsuarios():
    db = conectar()
 
    usuarios = db.Usuarios.find({'Administrador': False})

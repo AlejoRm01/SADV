@@ -1,5 +1,5 @@
 import locale, ast, re, os
-from Utiles.Conexion import enviarVenta, obtenerCodigosParaVender
+from Utiles.Conexion import setVenta, getCodigosParaVender
 from Utiles.Factura import generarFactura, hacerCodigos
 from Utiles.EnviarCorreo import mandarCorreoFactura, mandarCorreoHtml
 from UI.UI_verificacion import *
@@ -23,7 +23,7 @@ class Verificacion():
         # producto, cantidad, precio
         venta = []
         for i in self.informacionVenta:
-            codigos = obtenerCodigosParaVender(i[0], i[1])
+            codigos = getCodigosParaVender(i[0], i[1])
             venta.append([i[0], codigos])
             self.UIv.addLWcodigos(i[0])
             self.UIv.pushCodigos(codigos)
@@ -43,7 +43,7 @@ class Verificacion():
             self.UIv.enableBTfactura(True)
             self.UIv.enableBTfacturaCorreo(True)
             self.UIv.enableBTcorreo(True)
-            enviarVenta(self.informacionCliente, self.informacionVenta)
+            setVenta(self.informacionCliente, self.informacionVenta)
             self.UIv.throwMsgTerminado()
             
         except:

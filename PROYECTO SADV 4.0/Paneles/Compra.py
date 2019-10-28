@@ -1,5 +1,5 @@
 import sys, time, locale
-from Utiles.Conexion import obtenerProductos, verificarCodigos, enviarCompra, enviarCodigos
+from Utiles.Conexion import getProductos, verificarCodigos, setCompra, setCodigos
 from UI.UI_compra import *
 
 """
@@ -9,7 +9,7 @@ confirmar envio de correos y confirmar la genereacion de facturas.
 """
 class Compra():
     def __init__(self):
-        self.UIc = UI_Compra(obtenerProductos())
+        self.UIc = UI_Compra(getProductos())
         self.UIc.sigAceptar.connect(self.aceptar)
         self.UIc.sigEliminar.connect(self.eliminar)
         self.UIc.sigEliminarTodo.connect(self.eliminarTodo)
@@ -55,8 +55,8 @@ class Compra():
                 try:
                     valor = float(moneda) * float(tasa)
                     valor = str(locale.currency(valor, grouping=True))
-                    enviarCompra(factura, descripcion, socio, moneda, tasa, fecha, valor, codigos)
-                    enviarCodigos(codigos, descripcion)
+                    setCompra(factura, descripcion, socio, moneda, tasa, fecha, valor, codigos)
+                    setCodigos(codigos, descripcion)
                     
                     self.UIc.clearLW()
                     self.UIc.clearLEsocio()
