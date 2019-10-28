@@ -43,7 +43,7 @@ def getCodigosActualizacion(descripcion):
 def setCodigos(codigos, descripcion):
 
    db = conectar()
-   denominacion, descripcion, stockMinimo, codigosViejos = setCodigosActualizacion(descripcion)
+   denominacion, descripcion, stockMinimo, codigosViejos = getCodigosActualizacion(descripcion)
    codigos.extend([element for element in codigosViejos if element not in codigos])
 
    db.Productos.update({
@@ -73,7 +73,7 @@ def getInventario():
 
 def getCodigosParaVender(producto, cantidad):
    db = conectar()
-   denominacion, descripcion, stockMinimo, codigosViejos = setCodigosActualizacion(producto)
+   denominacion, descripcion, stockMinimo, codigosViejos = getCodigosActualizacion(producto)
 
    aux = 0
    codigosParaVender = []
