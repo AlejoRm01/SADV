@@ -1,5 +1,5 @@
 import pymongo
-from Utiles.Verificar import *
+from Utiles.Verificar import encriptar
 
 def conectar():
    client = pymongo.MongoClient()
