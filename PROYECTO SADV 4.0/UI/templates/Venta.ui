@@ -1131,6 +1131,58 @@ color: rgb(238, 238, 238);</string>
      <string/>
     </property>
    </widget>
+   <widget class="QLineEdit" name="lineEditFecha">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>330</x>
+      <y>470</y>
+      <width>271</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>10</pointsize>
+      <weight>50</weight>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_20">
+    <property name="geometry">
+     <rect>
+      <x>210</x>
+      <y>470</y>
+      <width>101</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>10</pointsize>
+      <weight>50</weight>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(57, 62, 70);
+color: rgb(238, 238, 238);</string>
+    </property>
+    <property name="text">
+     <string>Fecha OUT</string>
+    </property>
+   </widget>
    <zorder>label_21</zorder>
    <zorder>label</zorder>
    <zorder>label_5</zorder>
@@ -1177,6 +1229,8 @@ color: rgb(238, 238, 238);</string>
    <zorder>label_2</zorder>
    <zorder>label_3</zorder>
    <zorder>labelDescuento</zorder>
+   <zorder>lineEditFecha</zorder>
+   <zorder>label_20</zorder>
   </widget>
  </widget>
  <tabstops>

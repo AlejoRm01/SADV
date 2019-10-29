@@ -103,6 +103,8 @@ class UI_venta (QMainWindow):
         return self.lineEditTipoPago.text()
     
     # -----------------sets-----------------
+    def setLEfecha(self,tmp):
+        self.lineEditFecha.setText(tmp)
     def setLBtotal(self,tmp):
         self.labelTotal.setText(str(tmp))
     def setLBdescuento(self,tmp):

@@ -15,6 +15,7 @@ class Venta():
         self.subtotal = 0
         self.vdescuento = 0
         self.UIv.addCBdescripcion(getProductos())
+        self.UIv.setLEfecha(getFecha())
         self.UIv.sigAceptar.connect(self.aceptar)
         self.UIv.sigEliminar.connect(self.eliminar)
         self.UIv.sigEliminarTodo.connect(self.eliminarTodo)

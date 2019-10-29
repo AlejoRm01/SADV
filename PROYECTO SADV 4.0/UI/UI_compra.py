@@ -31,6 +31,9 @@ class UI_Compra(QMainWindow):
         self.botonEliminarTodo.clicked.connect(self.eliminarTodo)
         self.botonAceptar.clicked.connect(self.aceptar)
         self.botonUsuarios.clicked.connect(self.abrirUsuario)
+    #-----------------sets-----------------
+    def setLEfecha(self,tmp):
+        return self.lineEditFecha.setText(tmp)
     #-----------------gets-----------------        
     def getLECodigos(self):
         return self.lineEditCodigos.text()
@@ -46,8 +49,6 @@ class UI_Compra(QMainWindow):
         return self.lineEditMoneda.text()
     def getLEtasa(self):
         return self.lineEditTasa.text()
-    def getLEfecha(self):
-        return self.lineEditFecha.text()
     def getLWrow(self):
         return self.listWidget.currentRow()
     #-----------------counts-----------------
