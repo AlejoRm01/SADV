@@ -126,30 +126,6 @@
      <string>Inventario</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="botonUsuarios">
-    <property name="geometry">
-     <rect>
-      <x>30</x>
-      <y>240</y>
-      <width>111</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Arial</family>
-      <pointsize>10</pointsize>
-      <weight>50</weight>
-      <bold>false</bold>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 255, 255);</string>
-    </property>
-    <property name="text">
-     <string>Usuarios</string>
-    </property>
-   </widget>
   </widget>
  </widget>
  <resources/>

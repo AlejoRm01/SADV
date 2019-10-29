@@ -10,7 +10,6 @@ class UI_Inventario(QMainWindow):
     switch_Compra = QtCore.pyqtSignal()
     switch_Venta = QtCore.pyqtSignal()
     switch_Usuario = QtCore.pyqtSignal()
-    switch_Login = QtCore.pyqtSignal()
     def __init__(self, inventario):
         super(UI_Inventario,self).__init__()
         loadUi('UI/templates/Inventario.ui', self)
@@ -19,8 +18,6 @@ class UI_Inventario(QMainWindow):
         # -----------------Triggers-----------------
         self.botonCompras.clicked.connect(self.abrirCompras)
         self.botonVentas.clicked.connect(self.abrirVentas)
-        self.botonUsuarios.clicked.connect(self.abrirUsuarios)
-        self.botonCerrarSesion.clicked.connect(self.abrirLogin)
         # -----------------TABLA-----------------
         self.tablaInventario
         self.tablaInventario.setColumnCount(6)
@@ -51,8 +48,3 @@ class UI_Inventario(QMainWindow):
         self.switch_Compra.emit()
     def abrirVentas(self):
         self.switch_Venta.emit()
-    def abrirUsuarios(self):
-        self.switch_Usuario.emit()
-    def abrirLogin(self):
-        self.switch_Login.emit()
-        self.close()
