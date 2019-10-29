@@ -10,6 +10,7 @@ confirmar envio de correos y confirmar la genereacion de facturas.
 class Compra():
     def __init__(self):
         self.UIc = UI_Compra()
+        
         self.UIc.sigAceptar.connect(self.aceptar)
         self.UIc.sigEliminar.connect(self.eliminar)
         self.UIc.sigEliminarTodo.connect(self.eliminarTodo)
