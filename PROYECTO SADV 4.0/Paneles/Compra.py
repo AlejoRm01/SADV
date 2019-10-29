@@ -37,7 +37,7 @@ class Compra():
         socio = self.UIc.getLEsocio()
         moneda = self.UIc.getLEmoneda()
         tasa = self.UIc.getLEtasa()
-        fecha = self.UIc.getCL()
+        fecha = self.UIc.getLEfecha()
         aux = []
         aux = self.verificarRepetido(codigos)
         if(len(aux)>= 3):

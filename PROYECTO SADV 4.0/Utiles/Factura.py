@@ -13,13 +13,13 @@ def fecha():
     diasIngles = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
     diasEspanol = ["Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado", "Domingo"]
     mesIngles = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dic"]
-    mesEspanol = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre",
-                  "Noviembre", "Diciembre"]
+    mesEspanol = ["Ene", "Feb", "Mar", "Abri", "May", "Jun", "Jul", "Ago", "Sep", "Oct",
+                  "Nov", "Dic"]
 
     aux = diasIngles.index(formato_tiempo[0])
     fechaVenta += diasEspanol[aux] + ","
     aux = mesIngles.index(formato_tiempo[1])
-    fechaVenta += " " + formato_tiempo[2] + " de " + mesEspanol[aux] + " del " + formato_tiempo[4]
+    fechaVenta += " " + formato_tiempo[2] + " de " + mesEspanol[aux] + ", " + formato_tiempo[4]
     return fechaVenta
 
 

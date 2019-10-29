@@ -46,8 +46,8 @@ class UI_Compra(QMainWindow):
         return self.lineEditMoneda.text()
     def getLEtasa(self):
         return self.lineEditTasa.text()
-    def getCL(self):
-        return self.calendarWidget.selectedDate().toString()
+    def getLEfecha(self):
+        return self.lineEditFecha.text()
     def getLWrow(self):
         return self.listWidget.currentRow()
     #-----------------counts-----------------
