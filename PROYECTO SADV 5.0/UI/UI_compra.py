@@ -11,12 +11,17 @@ class UI_Compra(QMainWindow):
     switch_Venta = QtCore.pyqtSignal()
     switch_Usuario = QtCore.pyqtSignal()
     
+    sigEditar = QtCore.pyqtSignal()
+    sigAceptar = QtCore.pyqtSignal()
+    sigEliminarTodo = QtCore.pyqtSignal()
+    sigEliminar = QtCore.pyqtSignal()
 
-    def __init__(self, productos,parent=None):
+    def __init__(self,parent=None):
         super(UI_Compra, self).__init__()
         loadUi('UI/templates/Compra.ui', self)
         self.setWindowIcon(QIcon(ICONO))
-        self.a.addItems(['Alejadro','12312','2312323','213123123'])
+        
+        self.show()
     #-----------------sets-----------------
     def setLEfecha(self,tmp):
         return self.lineEditFecha.setText(tmp)
@@ -37,14 +42,14 @@ class UI_Compra(QMainWindow):
     #-----------------inserts-----------------
     
     # -----------------Triggers-----------------
+    
     def abrirInventario(self):
         self.switch_Inventario.emit()
         self.close()
     def abrirVentas(self):
         self.switch_Venta.emit()
         self.close()
-    def ingresarCodigos(self):
-        self.sigIngresarCodigos.emit()
+        
     
     def editar(self):
         self.sigEditar.emit()

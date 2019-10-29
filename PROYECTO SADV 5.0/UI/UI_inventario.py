@@ -20,8 +20,8 @@ class UI_Inventario(QMainWindow):
         self.botonVentas.clicked.connect(self.abrirVentas)
         # -----------------TABLA-----------------
         self.tablaInventario
-        self.tablaInventario.setColumnCount(6)
-        nombreColumnas = ("Cantidad", "Denominacion", "Acumulado", "Descripcion", "Stock Minimo", "Estado")
+        self.tablaInventario.setColumnCount(4)
+        nombreColumnas = ("Descripcion", "Cantidad", "Valor Unitario", "Acumulado")
         self.tablaInventario.setHorizontalHeaderLabels(nombreColumnas)
         self.tablaInventario.setEditTriggers(QAbstractItemView.NoEditTriggers)
         self.tablaInventario.verticalHeader().setVisible(False)
@@ -29,7 +29,7 @@ class UI_Inventario(QMainWindow):
         self.tablaInventario.setDragDropOverwriteMode(False)
         self.tablaInventario.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
         # -----------------Ancho columnas-----------------
-        for indice, ancho in enumerate((70, 90, 87, 500, 90, 150), start=0):
+        for indice, ancho in enumerate((600, 90, 150, 167), start=0):
             self.tablaInventario.setColumnWidth(indice, ancho)
         row = -1
         self.tablaInventario.setRowCount(row + 1)
@@ -41,8 +41,6 @@ class UI_Inventario(QMainWindow):
             self.tablaInventario.setItem(row, 1, QTableWidgetItem(str(dato[1])))
             self.tablaInventario.setItem(row, 2, QTableWidgetItem(str(dato[2])))
             self.tablaInventario.setItem(row, 3, QTableWidgetItem(str(dato[3])))
-            self.tablaInventario.setItem(row, 4, QTableWidgetItem(str(dato[4])))
-            self.tablaInventario.setItem(row, 5, QTableWidgetItem(str(dato[5])))
     # -----------------Triggers-----------------        
     def abrirCompras(self):
         self.switch_Compra.emit()

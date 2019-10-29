@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1329</width>
-    <height>555</height>
+    <width>1209</width>
+    <height>736</height>
    </rect>
   </property>
   <property name="acceptDrops">
@@ -20,60 +20,11 @@
    <string notr="true">background-color: rgb(255, 255, 255);</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QLabel" name="label_8">
-    <property name="geometry">
-     <rect>
-      <x>790</x>
-      <y>190</y>
-      <width>121</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Arial</family>
-      <pointsize>9</pointsize>
-      <weight>50</weight>
-      <bold>false</bold>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(34, 40, 49);
-color: rgb(238, 238, 238);</string>
-    </property>
-    <property name="text">
-     <string>Moneda fiduciaria</string>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="lineEditCodigos">
-    <property name="geometry">
-     <rect>
-      <x>270</x>
-      <y>40</y>
-      <width>341</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Arial</family>
-      <pointsize>10</pointsize>
-      <weight>50</weight>
-      <bold>false</bold>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 255, 255);</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
    <widget class="QPushButton" name="botonEditar">
     <property name="geometry">
      <rect>
-      <x>320</x>
-      <y>490</y>
+      <x>190</x>
+      <y>660</y>
       <width>91</width>
       <height>31</height>
      </rect>
@@ -93,62 +44,12 @@ color: rgb(238, 238, 238);</string>
      <string>Editar</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_7">
-    <property name="geometry">
-     <rect>
-      <x>790</x>
-      <y>290</y>
-      <width>81</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Arial</family>
-      <pointsize>9</pointsize>
-      <weight>50</weight>
-      <bold>false</bold>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(34, 40, 49);
-color: rgb(238, 238, 238);</string>
-    </property>
-    <property name="text">
-     <string>Fecha In</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_4">
-    <property name="geometry">
-     <rect>
-      <x>790</x>
-      <y>90</y>
-      <width>91</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Arial</family>
-      <pointsize>9</pointsize>
-      <weight>50</weight>
-      <bold>false</bold>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(34, 40, 49);
-color: rgb(238, 238, 238);</string>
-    </property>
-    <property name="text">
-     <string>Descripcion</string>
-    </property>
-   </widget>
    <widget class="QLabel" name="label_3">
     <property name="geometry">
      <rect>
-      <x>200</x>
+      <x>190</x>
       <y>40</y>
-      <width>61</width>
+      <width>71</width>
       <height>31</height>
      </rect>
     </property>
@@ -165,59 +66,14 @@ color: rgb(238, 238, 238);</string>
 color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">
-     <string>Codigos</string>
-    </property>
-   </widget>
-   <widget class="QComboBox" name="comboBoxDescripcion">
-    <property name="geometry">
-     <rect>
-      <x>920</x>
-      <y>90</y>
-      <width>391</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Arial</family>
-      <pointsize>10</pointsize>
-      <weight>50</weight>
-      <bold>false</bold>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 255, 255);</string>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="lineEditSocio">
-    <property name="geometry">
-     <rect>
-      <x>920</x>
-      <y>140</y>
-      <width>221</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Arial</family>
-      <pointsize>10</pointsize>
-      <weight>50</weight>
-      <bold>false</bold>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 255, 255);</string>
-    </property>
-    <property name="text">
-     <string/>
+     <string>Productos</string>
     </property>
    </widget>
    <widget class="QPushButton" name="botonEliminarTodo">
     <property name="geometry">
      <rect>
-      <x>540</x>
-      <y>490</y>
+      <x>430</x>
+      <y>660</y>
       <width>121</width>
       <height>31</height>
      </rect>
@@ -237,56 +93,11 @@ color: rgb(255, 255, 255);</string>
      <string>Eliminar Todo</string>
     </property>
    </widget>
-   <widget class="QListWidget" name="listWidget">
-    <property name="geometry">
-     <rect>
-      <x>270</x>
-      <y>90</y>
-      <width>441</width>
-      <height>391</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Arial</family>
-      <pointsize>10</pointsize>
-      <weight>50</weight>
-      <bold>false</bold>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 255, 255);</string>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="lineEditFactura">
-    <property name="geometry">
-     <rect>
-      <x>920</x>
-      <y>40</y>
-      <width>221</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Arial</family>
-      <pointsize>10</pointsize>
-      <weight>50</weight>
-      <bold>false</bold>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 255, 255);</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
    <widget class="QPushButton" name="botonAceptar">
     <property name="geometry">
      <rect>
-      <x>920</x>
-      <y>490</y>
+      <x>580</x>
+      <y>660</y>
       <width>91</width>
       <height>31</height>
      </rect>
@@ -309,8 +120,8 @@ color: rgb(255, 255, 255);</string>
    <widget class="QPushButton" name="botonEliminar">
     <property name="geometry">
      <rect>
-      <x>430</x>
-      <y>490</y>
+      <x>310</x>
+      <y>660</y>
       <width>91</width>
       <height>31</height>
      </rect>
@@ -378,84 +189,11 @@ color: rgb(255, 255, 255);</string>
      <string>Compras</string>
     </property>
    </widget>
-   <widget class="QLineEdit" name="lineEditMoneda">
-    <property name="geometry">
-     <rect>
-      <x>920</x>
-      <y>190</y>
-      <width>221</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Arial</family>
-      <pointsize>10</pointsize>
-      <weight>50</weight>
-      <bold>false</bold>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 255, 255);</string>
-    </property>
-    <property name="text">
-     <string>OBLIGATORIO</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label">
-    <property name="geometry">
-     <rect>
-      <x>740</x>
-      <y>0</y>
-      <width>611</width>
-      <height>691</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Eras Bold ITC</family>
-      <weight>50</weight>
-      <bold>false</bold>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(34, 40, 49);
-color: rgb(238, 238, 238);</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_6">
-    <property name="geometry">
-     <rect>
-      <x>790</x>
-      <y>140</y>
-      <width>41</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Arial</family>
-      <pointsize>9</pointsize>
-      <weight>50</weight>
-      <bold>false</bold>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(34, 40, 49);
-color: rgb(238, 238, 238);</string>
-    </property>
-    <property name="text">
-     <string>Socio</string>
-    </property>
-   </widget>
    <widget class="QPushButton" name="botonIngresar">
     <property name="geometry">
      <rect>
-      <x>620</x>
-      <y>40</y>
+      <x>1040</x>
+      <y>120</y>
       <width>91</width>
       <height>31</height>
      </rect>
@@ -473,55 +211,6 @@ color: rgb(238, 238, 238);</string>
     </property>
     <property name="text">
      <string>Ingresar</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_9">
-    <property name="geometry">
-     <rect>
-      <x>790</x>
-      <y>240</y>
-      <width>81</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Arial</family>
-      <pointsize>9</pointsize>
-      <weight>50</weight>
-      <bold>false</bold>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(34, 40, 49);
-color: rgb(238, 238, 238);</string>
-    </property>
-    <property name="text">
-     <string>Tasa del día</string>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="lineEditTasa">
-    <property name="geometry">
-     <rect>
-      <x>920</x>
-      <y>240</y>
-      <width>221</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Arial</family>
-      <pointsize>10</pointsize>
-      <weight>50</weight>
-      <bold>false</bold>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 255, 255);</string>
-    </property>
-    <property name="text">
-     <string>OBLIGATORIO</string>
     </property>
    </widget>
    <widget class="QPushButton" name="botonInventario">
@@ -551,8 +240,8 @@ color: rgb(238, 238, 238);</string>
    <widget class="QLabel" name="label_5">
     <property name="geometry">
      <rect>
-      <x>790</x>
-      <y>40</y>
+      <x>190</x>
+      <y>80</y>
       <width>111</width>
       <height>31</height>
      </rect>
@@ -566,11 +255,11 @@ color: rgb(238, 238, 238);</string>
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(34, 40, 49);
+     <string notr="true">background-color: rgb(57, 62, 70);
 color: rgb(238, 238, 238);</string>
     </property>
     <property name="text">
-     <string>Numero factura</string>
+     <string>ID Producto</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_2">
@@ -578,39 +267,12 @@ color: rgb(238, 238, 238);</string>
      <rect>
       <x>0</x>
       <y>0</y>
-      <width>741</width>
-      <height>571</height>
+      <width>1211</width>
+      <height>831</height>
      </rect>
     </property>
     <property name="styleSheet">
      <string notr="true">background-color: rgb(57, 62, 70);</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="lineEditFecha">
-    <property name="enabled">
-     <bool>true</bool>
-    </property>
-    <property name="geometry">
-     <rect>
-      <x>920</x>
-      <y>290</y>
-      <width>221</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Arial</family>
-      <pointsize>10</pointsize>
-      <weight>50</weight>
-      <bold>false</bold>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">
      <string/>
@@ -640,32 +302,267 @@ color: rgb(238, 238, 238);</string>
      <string>Estadisticas</string>
     </property>
    </widget>
+   <widget class="QTableWidget" name="tableWidgetProductos">
+    <property name="geometry">
+     <rect>
+      <x>190</x>
+      <y>180</y>
+      <width>951</width>
+      <height>471</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEditIdProducto">
+    <property name="geometry">
+     <rect>
+      <x>320</x>
+      <y>80</y>
+      <width>271</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="comboBoxDescripcion">
+    <property name="geometry">
+     <rect>
+      <x>320</x>
+      <y>40</y>
+      <width>811</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>9</pointsize>
+      <weight>50</weight>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255);</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEditDescripcion">
+    <property name="geometry">
+     <rect>
+      <x>730</x>
+      <y>80</y>
+      <width>401</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_6">
+    <property name="geometry">
+     <rect>
+      <x>640</x>
+      <y>80</y>
+      <width>111</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>9</pointsize>
+      <weight>50</weight>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(57, 62, 70);
+color: rgb(238, 238, 238);</string>
+    </property>
+    <property name="text">
+     <string>Descripcion</string>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="spinBoxCantidad">
+    <property name="geometry">
+     <rect>
+      <x>320</x>
+      <y>120</y>
+      <width>51</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>11</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255);</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_7">
+    <property name="geometry">
+     <rect>
+      <x>190</x>
+      <y>120</y>
+      <width>111</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>9</pointsize>
+      <weight>50</weight>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(57, 62, 70);
+color: rgb(238, 238, 238);</string>
+    </property>
+    <property name="text">
+     <string>Cantidad</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEditValorUnitario">
+    <property name="geometry">
+     <rect>
+      <x>470</x>
+      <y>120</y>
+      <width>211</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_8">
+    <property name="geometry">
+     <rect>
+      <x>390</x>
+      <y>120</y>
+      <width>111</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>9</pointsize>
+      <weight>50</weight>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(57, 62, 70);
+color: rgb(238, 238, 238);</string>
+    </property>
+    <property name="text">
+     <string>Valor Total</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_9">
+    <property name="geometry">
+     <rect>
+      <x>700</x>
+      <y>120</y>
+      <width>111</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>9</pointsize>
+      <weight>50</weight>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(57, 62, 70);
+color: rgb(238, 238, 238);</string>
+    </property>
+    <property name="text">
+     <string>Porcentaje</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEditValorUnitario_2">
+    <property name="geometry">
+     <rect>
+      <x>780</x>
+      <y>120</y>
+      <width>71</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
    <zorder>label_2</zorder>
-   <zorder>label</zorder>
-   <zorder>label_8</zorder>
-   <zorder>lineEditCodigos</zorder>
    <zorder>botonEditar</zorder>
-   <zorder>label_7</zorder>
-   <zorder>label_4</zorder>
    <zorder>label_3</zorder>
-   <zorder>comboBoxDescripcion</zorder>
-   <zorder>lineEditSocio</zorder>
    <zorder>botonEliminarTodo</zorder>
-   <zorder>listWidget</zorder>
-   <zorder>lineEditFactura</zorder>
    <zorder>botonAceptar</zorder>
    <zorder>botonEliminar</zorder>
    <zorder>botonVentas</zorder>
    <zorder>botonCompras</zorder>
-   <zorder>lineEditMoneda</zorder>
-   <zorder>label_6</zorder>
    <zorder>botonIngresar</zorder>
-   <zorder>label_9</zorder>
-   <zorder>lineEditTasa</zorder>
    <zorder>botonInventario</zorder>
    <zorder>label_5</zorder>
-   <zorder>lineEditFecha</zorder>
    <zorder>botonEstadisitcas</zorder>
+   <zorder>tableWidgetProductos</zorder>
+   <zorder>lineEditIdProducto</zorder>
+   <zorder>comboBoxDescripcion</zorder>
+   <zorder>label_6</zorder>
+   <zorder>spinBoxCantidad</zorder>
+   <zorder>label_7</zorder>
+   <zorder>label_8</zorder>
+   <zorder>label_9</zorder>
+   <zorder>lineEditValorUnitario_2</zorder>
+   <zorder>lineEditValorUnitario</zorder>
+   <zorder>lineEditDescripcion</zorder>
   </widget>
  </widget>
  <resources/>
