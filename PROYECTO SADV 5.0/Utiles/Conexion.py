@@ -5,6 +5,9 @@ def conectar():
    db = client['SADV']
    return db
 
+def verificarCodigos(tmp):
+   pass
+
 def getProductos():
    db = conectar()
    result = db.Productos.find()
