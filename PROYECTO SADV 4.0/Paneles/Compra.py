@@ -14,7 +14,6 @@ class Compra():
         self.fecha = getFecha()
         self.UIc.setLEfecha(self.fecha)
         self.UIc.sigAceptar.connect(self.aceptar)
-        self.UIc.sigAceptar.connect(self.aceptar)
         self.UIc.sigEliminar.connect(self.eliminar)
         self.UIc.sigEliminarTodo.connect(self.eliminarTodo)
         self.UIc.sigIngresarCodigos.connect(self.ingresarCodigos)
@@ -68,15 +67,18 @@ class Compra():
                     self.UIc.clearLEfactura()
 
                     self.UIc.throwMsgProcesoTerminado()
+                    return
                 except:
                     self.UIc.throwMsgErrorProceso()
-                
+                    return
             else:
                 self.UIc.clearLW()
                 self.UIc.addLW(verificacion)
                 self.UIc.throwMsgErrorRepetido()
+                return
         else:
             self.UIc.throwMsgErrorIngreso()
+            return
             
     def verificarRepetido(self, valores):
         repetido = ['Codigos repetidos','No se agregaron codigos']

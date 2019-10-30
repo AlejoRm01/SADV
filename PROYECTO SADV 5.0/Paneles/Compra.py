@@ -1,5 +1,5 @@
 import sys, time, locale
-#from Utiles.Conexion import 
+from Utiles.Conexion import getProductos
 from UI.UI_compra import *
 
 """
@@ -9,18 +9,23 @@ confirmar envio de correos y confirmar la genereacion de facturas.
 """
 class Compra():
     def __init__(self):
-        self.UIc = UI_Compra()
-        
+        self.UIc = UI_Compra(getProductos())
+        self.informacionCompra = []
+        self.referencia = None
+        if(self.referencia != None):
+            self.ingresar()        
         self.UIc.sigAceptar.connect(self.aceptar)
         self.UIc.sigEliminar.connect(self.eliminar)
         self.UIc.sigEliminarTodo.connect(self.eliminarTodo)
         self.UIc.sigEditar.connect(self.editar)
-    #-----------------FUNCIONES-----------------
+    #-----------------Triggers-----------------
     def show(self):
         self.UIc.show()
     def hide(self):
         self.UIc.hie() 
-    
+        
+    def ingresar(self):
+        pass
     def aceptar(self):
         pass        
     def editar(self):
@@ -28,8 +33,6 @@ class Compra():
     def eliminar(self):
         pass
     def eliminarTodo(self):
-        pass
-    def show(self):
         pass
     
     

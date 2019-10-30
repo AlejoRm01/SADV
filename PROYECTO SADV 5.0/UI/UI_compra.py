@@ -16,12 +16,12 @@ class UI_Compra(QMainWindow):
     sigEliminarTodo = QtCore.pyqtSignal()
     sigEliminar = QtCore.pyqtSignal()
 
-    def __init__(self,parent=None):
+    def __init__(self,productos,parent=None):
         super(UI_Compra, self).__init__()
         loadUi('UI/templates/Compra.ui', self)
         self.setWindowIcon(QIcon(ICONO))
+        self.setCBdescripcion(productos)
         # -----------------TABLA-----------------
-        self.tablaProductos
         self.tablaProductos.setColumnCount(6)
         nombreColumnas = ("Referencia","Descripcion","Cantidad","Porcentaje","Valor Unitario","Valor Total")
         self.tablaProductos.setHorizontalHeaderLabels(nombreColumnas)
@@ -34,21 +34,32 @@ class UI_Compra(QMainWindow):
         for indice, ancho in enumerate((168, 400, 100, 100, 150, 150), start=0):
             self.tablaProductos.setColumnWidth(indice, ancho)
         self.show()
-    #-----------------sets-----------------
-    def getLEIdProducto(self):
+    #-----------------gets-----------------
+    def getLEidProducto(self):
         return self.lineEditProducto.text()
-    def getLEDescripcion(self):
+    def getLEdescripcion(self):
         return self.lineEditDescripcion.text()
-    def getLEValorUnitario(self):
+    def getLEvalorUnitario(self):
         return self.lineEditValorUnitario.text()
-    def getLEPorcentaje(self):
+    def getLEporcentaje(self):
         return self.lineEditPorcentaje.text()
-    def getCBDescripcion(self):
+    def getCBdescripcion(self):
         return self.comboBoxDescripcion.currentText()
     def getSBcantidad(self):
         return self.spinBoxCantidad.value()
-    #-----------------gets-----------------        
-    
+    #-----------------sets-----------------        
+    def setCBdescripcion(self,tmp):
+        self.comboBoxDescripcion.addItems(tmp)
+    def setLEidProducto(self):
+        self.lineEditProducto.setText()
+    def setLEdescripcion(self):
+        self.lineEditDescripcion.setText()
+    def setLEvalorUnitario(self):
+        self.lineEditValorUnitario.setText()
+    def setLEporcentaje(self):
+        self.lineEditPorcentaje.setText()
+    def setSBcantidad(self):
+        self.spinBoxCantidad.setValue()
     #-----------------throwMsg-----------------
     def throwMsgProcesoTerminado(self):
         QMessageBox.information(self, "Mensaje", "Proceso terminado", QMessageBox.Ok)
