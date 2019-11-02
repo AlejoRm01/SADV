@@ -1,12 +1,10 @@
 import pymongo
+from Utiles.Verificar import encriptar
 
 def conectar():
    client = pymongo.MongoClient()
-   db = client['SADV']
+   db = client['Diem']
    return db
-
-def verificarCodigos(tmp):
-   pass
 
 def getProductos():
    db = conectar()
@@ -16,10 +14,6 @@ def getProductos():
       productos.append(i['Descripcion'])
    return productos
 
-def getProducto():
-   db = conectar()
-   
-   
 def setCompra(factura, descripcion, socio, moneda, tasa, fecha, valorLote, codigos):
    db = conectar()
    db.Compras.insert({
@@ -45,6 +39,22 @@ def getCodigosActualizacion(descripcion):
       stockMinimo = i['StockMinimo']
 
    return denominacion, descripcion, stockMinimo, codigos
+
+def setCodigos(codigos, descripcion):
+
+   db = conectar()
+   denominacion, descripcion, stockMinimo, codigosViejos = getCodigosActualizacion(descripcion)
+   codigos.extend([element for element in codigosViejos if element not in codigos])
+
+   db.Productos.update({
+      'Descripcion': descripcion
+   },
+   {
+      'Denominacion': denominacion,
+      'Descripcion': descripcion,
+      'StockMinimo' : stockMinimo,
+      'Codigos': codigos
+   })
 
 def getInventario():
    db = conectar()
@@ -86,6 +96,20 @@ def getCodigosParaVender(producto, cantidad):
 
    return codigosParaVender
 
+def verificarCodigos(codigos):
+
+      db = conectar()
+      result = db.Productos.find()
+
+      for i in result:
+         codigosDB = i['Codigos']
+         comparacion = [item for item in codigos if item in codigosDB]
+         comparacion.insert(0, "Codigos Repetidos")
+         if len(comparacion) > 1:
+            return comparacion
+         else:
+            return ['False']
+
 def setVenta(arrC, arrV):
    #FECHA, NUMERO FACTURA, CLIENTE, IDENTIFICACION, CELULAR, DEPARTAMENTO, TELEFONO, DIRECCION, CORREO, DESCUENTO, TPAGO
    cliente = arrC[0]
@@ -105,3 +129,32 @@ def setVenta(arrC, arrV):
       'Tipo_Pago': cliente[10],
       'Productos': venta
    })
+
+def getUsuarios():
+   db = conectar()
+
+   usuarios = db.Usuarios.find({'Administrador': False})
+   us = []
+   for i in usuarios:
+      us.append(i['Nombre del usuario']) 
+   return us
+
+def borrarUs(usuario):
+   db = conectar()
+   db.Usuarios.remove({'Nombre del usuario': usuario})
+
+def agregarUs(usuario,contraseña, tipoUsu) :
+    con = encriptar(contraseña)
+  
+    db = conectar()
+    try:
+     db.Usuarios.insert({
+        'Nombre del usuario' : usuario,
+        'Contraseña' : con,
+        'Administrador' : tipoUsu
+     })
+     return True
+    except Exception as e :
+       print(str(e))
+       return False
+    

@@ -11,55 +11,67 @@ class UI_Compra(QMainWindow):
     switch_Venta = QtCore.pyqtSignal()
     switch_Usuario = QtCore.pyqtSignal()
     
+    sigAceptar  = QtCore.pyqtSignal()
+    sigIngresarCodigos  = QtCore.pyqtSignal()
     sigEditar = QtCore.pyqtSignal()
-    sigAceptar = QtCore.pyqtSignal()
-    sigEliminarTodo = QtCore.pyqtSignal()
     sigEliminar = QtCore.pyqtSignal()
+    sigEliminarTodo = QtCore.pyqtSignal()
 
-    def __init__(self,productos,parent=None):
+    def __init__(self, productos,parent=None):
         super(UI_Compra, self).__init__()
         loadUi('UI/templates/Compra.ui', self)
         self.setWindowIcon(QIcon(ICONO))
-        self.setCBdescripcion(productos)
-        # -----------------TABLA-----------------
-        self.tablaProductos.setColumnCount(6)
-        nombreColumnas = ("Referencia","Descripcion","Cantidad","Porcentaje","Valor Unitario","Valor Total")
-        self.tablaProductos.setHorizontalHeaderLabels(nombreColumnas)
-        self.tablaProductos.setEditTriggers(QAbstractItemView.NoEditTriggers)
-        self.tablaProductos.verticalHeader().setVisible(False)
-        self.tablaProductos.setAlternatingRowColors(True)
-        self.tablaProductos.setDragDropOverwriteMode(False)
-        self.tablaProductos.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
-        # -----------------Ancho columnas-----------------
-        for indice, ancho in enumerate((168, 400, 100, 100, 150, 150), start=0):
-            self.tablaProductos.setColumnWidth(indice, ancho)
-        self.show()
-    #-----------------gets-----------------
-    def getLEidProducto(self):
-        return self.lineEditProducto.text()
-    def getLEdescripcion(self):
-        return self.lineEditDescripcion.text()
-    def getLEvalorUnitario(self):
-        return self.lineEditValorUnitario.text()
-    def getLEporcentaje(self):
-        return self.lineEditPorcentaje.text()
+        self.addCBdescripcion(productos)
+        #-----------------BOTONES-----------------
+        self.botonInventario.clicked.connect(self.abrirInventario)
+        self.botonVentas.clicked.connect(self.abrirVentas)
+        self.botonIngresar.clicked.connect(self.ingresarCodigos)
+        self.botonEditar.clicked.connect(self.editar)
+        self.botonEliminar.clicked.connect(self.eliminar)
+        self.botonEliminarTodo.clicked.connect(self.eliminarTodo)
+        self.botonAceptar.clicked.connect(self.aceptar)
+        self.botonUsuarios.clicked.connect(self.abrirUsuario)
+    #-----------------sets-----------------
+    def setLEfecha(self,tmp):
+        return self.lineEditFecha.setText(tmp)
+    #-----------------gets-----------------        
+    def getLECodigos(self):
+        return self.lineEditCodigos.text()
+    def getLEfactura(self):
+        return self.lineEditFactura.text()
     def getCBdescripcion(self):
         return self.comboBoxDescripcion.currentText()
-    def getSBcantidad(self):
-        return self.spinBoxCantidad.value()
-    #-----------------sets-----------------        
-    def setCBdescripcion(self,tmp):
+    def getLWitem(self,tmp):
+        return self.listWidget.item(tmp).text()
+    def getLEsocio(self):
+        return self.lineEditSocio.text()
+    def getLEmoneda(self):
+        return self.lineEditMoneda.text()
+    def getLEtasa(self):
+        return self.lineEditTasa.text()
+    def getLWrow(self):
+        return self.listWidget.currentRow()
+    #-----------------counts-----------------
+    def countLW(self):
+        return self.listWidget.count()
+    #-----------------adds-----------------
+    def addLW(self,tmp):
+        self.listWidget.addItems(tmp)
+    def addCBdescripcion(self,tmp):
         self.comboBoxDescripcion.addItems(tmp)
-    def setLEidProducto(self):
-        self.lineEditProducto.setText()
-    def setLEdescripcion(self):
-        self.lineEditDescripcion.setText()
-    def setLEvalorUnitario(self):
-        self.lineEditValorUnitario.setText()
-    def setLEporcentaje(self):
-        self.lineEditPorcentaje.setText()
-    def setSBcantidad(self):
-        self.spinBoxCantidad.setValue()
+    #-----------------clears-----------------
+    def clearLEcodigos(self):
+        self.lineEditCodigos.clear()
+    def clearLW(self):
+        self.listWidget.clear()
+    def clearLEsocio(self):
+        self.lineEditSocio.clear()
+    def clearLEmoneda(self):
+        self.lineEditMoneda.clear()
+    def clearLEfactura(self):
+        self.lineEditFactura.clear()
+    def clearLEtasa(self):
+        self.lineEditTasa.clear()
     #-----------------throwMsg-----------------
     def throwMsgProcesoTerminado(self):
         QMessageBox.information(self, "Mensaje", "Proceso terminado", QMessageBox.Ok)
@@ -71,9 +83,11 @@ class UI_Compra(QMainWindow):
     def throwMsgErrorIngreso(self):
         QMessageBox.information(self, "Mensaje", "Proceso interrumpido, Ingrese codigos", QMessageBox.Ok)
     #-----------------takes-----------------
-   
+    def takeLW(self,tmp):
+        self.listWidget.takeItem(tmp)
     #-----------------inserts-----------------
-    
+    def insertLW(self,tmp1,tmp2):
+        self.listWidget.insertItem(tmp1,tmp2)
     # -----------------Triggers-----------------
     def abrirInventario(self):
         self.switch_Inventario.emit()
@@ -81,17 +95,11 @@ class UI_Compra(QMainWindow):
     def abrirVentas(self):
         self.switch_Venta.emit()
         self.close()
-    # -----------------Upload-----------------
-    def uploadTabla(self,tmp,row):
-        self.tableWidget.setRowCount(row)
-    
-        self.tableWidget.setItem(row, 0, QTableWidgetItem(  tmp[0]  )) #REFERENCIA
-        self.tableWidget.setItem(row, 1, QTableWidgetItem(  tmp[1]  )) #DESCRIPCION
-        self.tableWidget.setItem(row, 2, QTableWidgetItem(  tmp[2]  )) #CANTIDAD
-        self.tableWidget.setItem(row, 3, QTableWidgetItem(  tmp[3]  )) #PORCENTAJE
-        self.tableWidget.setItem(row, 4, QTableWidgetItem(  tmp[4]  )) #VALOR UNITARIO
-        self.tableWidget.setItem(row, 5, QTableWidgetItem(  tmp[5]  )) #VALOR TOTAL
-    
+    def abrirUsuario(self):
+        self.switch_Usuario.emit()
+        self.close()
+    def ingresarCodigos(self):
+        self.sigIngresarCodigos.emit()
     def editar(self):
         self.sigEditar.emit()
     def aceptar(self):

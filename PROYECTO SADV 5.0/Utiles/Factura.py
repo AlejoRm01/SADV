@@ -19,7 +19,7 @@ def fecha():
     aux = diasIngles.index(formato_tiempo[0])
     fechaVenta += diasEspanol[aux] + ","
     aux = mesIngles.index(formato_tiempo[1])
-    fechaVenta += " " + formato_tiempo[2] + " de " + mesEspanol[aux] + ", " + formato_tiempo[4]
+    fechaVenta += " " + mesEspanol[aux]  + " " + formato_tiempo[3] + ", " + formato_tiempo[5]
     return fechaVenta
 
 
@@ -62,7 +62,7 @@ def generarFactura(PathNombre, lista, informacionCliente, consola):
     lista.insert(0, ['DESCRIPCION', 'CANT', 'VALOR UNITARIO', 'VALOR TOTAL'])
 
     c = canvas.Canvas("Facturas/" + PathNombre +".pdf", pagesize=A4)
-    c.drawImage("Imagenes/Logotipo.png", 29, 730, width=130, height=50)
+    c.drawImage("Imagenes/LogotipoPDF.png", 29, 730, width=130, height=50)
     c.drawString(270, 760, 'SADV')
     c.drawString(490, 760, 'FACTURA')
 
@@ -218,15 +218,17 @@ def generarFactura(PathNombre, lista, informacionCliente, consola):
     c.save()
 
 def hacerCodigos(lista):
+    lista = lista[0]
     w, h = A4
     c = canvas.Canvas("Codigos/TusCodigos.pdf", pagesize=A4)
     lista = lista 
     text = c.beginText(50, h - 50)
     
-    text.setFont("Times-Roman", 12)
+    text.setFont("Times-Roman", 16)
     text.textLine('Tus codigos son:')
     for i in lista:
         text.textLine("      " + str(i))
     c.drawText(text)
     c.showPage()
     c.save()
+    

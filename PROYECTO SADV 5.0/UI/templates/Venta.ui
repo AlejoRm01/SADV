@@ -234,7 +234,7 @@ color: rgb(238, 238, 238);</string>
      <rect>
       <x>210</x>
       <y>150</y>
-      <width>101</width>
+      <width>111</width>
       <height>31</height>
      </rect>
     </property>
@@ -273,7 +273,7 @@ color: rgb(238, 238, 238);</string>
      <string notr="true">background-color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">
-     <string>OBLIGATORIO</string>
+     <string/>
     </property>
    </widget>
    <widget class="QLabel" name="label_13">
@@ -461,7 +461,7 @@ color: rgb(238, 238, 238);</string>
      <string notr="true">background-color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">
-     <string>OBLIGATORIO</string>
+     <string/>
     </property>
    </widget>
    <widget class="QLineEdit" name="lineEditDescuento">
@@ -991,6 +991,30 @@ color: rgb(238, 238, 238);</string>
      <string/>
     </property>
    </widget>
+   <widget class="QPushButton" name="botonUsuarios">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>190</y>
+      <width>111</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>10</pointsize>
+      <weight>50</weight>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255);</string>
+    </property>
+    <property name="text">
+     <string>Usuarios</string>
+    </property>
+   </widget>
    <widget class="QLabel" name="labelTotal">
     <property name="geometry">
      <rect>
@@ -1159,13 +1183,13 @@ color: rgb(238, 238, 238);</string>
      <string>Fecha OUT</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="botonEstadisticas">
+   <widget class="QLabel" name="label_22">
     <property name="geometry">
      <rect>
-      <x>30</x>
-      <y>190</y>
-      <width>111</width>
-      <height>41</height>
+      <x>310</x>
+      <y>150</y>
+      <width>21</width>
+      <height>31</height>
      </rect>
     </property>
     <property name="font">
@@ -1177,10 +1201,61 @@ color: rgb(238, 238, 238);</string>
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 255, 255);</string>
+     <string notr="true">background-color: rgb(57, 62, 70);
+color: rgb(255, 102, 0);</string>
     </property>
     <property name="text">
-     <string>Estadisticas</string>
+     <string>*</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_23">
+    <property name="geometry">
+     <rect>
+      <x>270</x>
+      <y>350</y>
+      <width>21</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>10</pointsize>
+      <weight>50</weight>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(57, 62, 70);
+color: rgb(255, 102, 0);</string>
+    </property>
+    <property name="text">
+     <string>*</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_24">
+    <property name="geometry">
+     <rect>
+      <x>330</x>
+      <y>510</y>
+      <width>261</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>10</pointsize>
+      <weight>50</weight>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(57, 62, 70);
+color: rgb(230, 132, 0);</string>
+    </property>
+    <property name="text">
+     <string>(*)Campos de caracter obligatorio</string>
     </property>
    </widget>
    <zorder>label_21</zorder>
@@ -1224,19 +1299,23 @@ color: rgb(238, 238, 238);</string>
    <zorder>lineEditTipoPago</zorder>
    <zorder>label_19</zorder>
    <zorder>lineEditDepartamento</zorder>
+   <zorder>botonUsuarios</zorder>
    <zorder>labelTotal</zorder>
    <zorder>label_2</zorder>
    <zorder>label_3</zorder>
    <zorder>labelDescuento</zorder>
    <zorder>lineEditFecha</zorder>
    <zorder>label_20</zorder>
-   <zorder>botonEstadisticas</zorder>
+   <zorder>label_22</zorder>
+   <zorder>label_23</zorder>
+   <zorder>label_24</zorder>
   </widget>
  </widget>
  <tabstops>
   <tabstop>botonInventario</tabstop>
   <tabstop>botonCompras</tabstop>
   <tabstop>botonVentas</tabstop>
+  <tabstop>botonUsuarios</tabstop>
   <tabstop>lineEditFactura</tabstop>
   <tabstop>checkBoxDigital</tabstop>
   <tabstop>checkBoxFisico</tabstop>

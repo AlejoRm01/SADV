@@ -9,6 +9,7 @@ from Constantes import *
 class UI_venta (QMainWindow):
     switch_Inventario = QtCore.pyqtSignal()
     switch_Compra = QtCore.pyqtSignal()
+    switch_Usuario = QtCore.pyqtSignal()
     switch_Verificacion = QtCore.pyqtSignal(list)
     
     sigPreparar = QtCore.pyqtSignal()
@@ -63,6 +64,7 @@ class UI_venta (QMainWindow):
         self.botonEliminar.clicked.connect(self.eliminar)
         self.botonEliminarTodo.clicked.connect(self.eliminarTodo)
         self.botonContinuarVenta.clicked.connect(self.prepararDatos)
+        self.botonUsuarios.clicked.connect(self.abrirUsuarios)
         self.checkBoxDigital.stateChanged.connect(self.clickBoxDigital)
         self.checkBoxFisico.stateChanged.connect(self.clickBoxFisico)
         
@@ -141,6 +143,9 @@ class UI_venta (QMainWindow):
         self.close()
     def abrirCompras(self):
         self.switch_Compra.emit()
+        self.close()
+    def abrirUsuarios(self):
+        self.switch_Usuario.emit()
         self.close()
     def abrirVerificacion(self,tmp):
         self.switch_Verificacion.emit(tmp)
