@@ -1,6 +1,0 @@
-{ 
-    "_id" : ObjectId("5d0d75d2fd268716eab06cd6"), 
-    "Nombre del usuario" : "Admin", 
-    "Contraseña" : BinData(0, "Z0FBQUFBQmREWVZxWWVSMzR4VEs4b1hUQldRSUVIeGRKTnFTam1RTmM1M0p6NU9LdnRnZHNGY2t3MUdILTFqUkdkNUlLZXdNVk5ZRkdtT25kdE1tZEZFMUkwOEpwNjFZTVpkMGNSOEpWdC1UZTQ3RG1LTUtMeTg9"), 
-    "Administrador" : true
-}
