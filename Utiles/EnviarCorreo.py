@@ -6,9 +6,9 @@ from email.mime.base import MIMEBase
 from email.encoders import encode_base64
 from Utiles.HtmlTemplate import prepararCorreo
 from Utiles.Factura import fecha
-from Constantes import EMAIL,CONTRASEÑA,ASUNTO 
+from Constantes import EMAIL,CONTRASEÑA,ASUNTO
 
-def enviarCorreo(tipo,correo, pathArchivo, usuario):
+def enviarCorreo(tipo, correo, pathArchivo, usuario):
     if(tipo == "FACTURA" ):
         html = prepararCorreo("Tu factura es",fecha())
         path = pathArchivo
@@ -27,11 +27,10 @@ def enviarCorreo(tipo,correo, pathArchivo, usuario):
     else:
         return
     
-    EMAIL_ADDRESS = EMAIL
     EMAIL_PASSWORD = CONTRASEÑA
     msg = EmailMessage()
     msg['Subject'] = ASUNTO
-    msg['From'] = EMAIL_ADDRESS
+    msg['From'] = EMAIL
     msg['To'] = correo
 
 
@@ -46,5 +45,5 @@ def enviarCorreo(tipo,correo, pathArchivo, usuario):
         msg.add_attachment(file_data, maintype = 'aplication', subtype ='octect-stream' , filename = file_name)
     
     with smtplib.SMTP_SSL('smtp.gmail.com', 465) as smtp:
-        smtp.login(EMAIL_ADDRESS, EMAIL_PASSWORD)
+        smtp.login(EMAIL, CONTRASEÑA)
         smtp.send_message(msg)
