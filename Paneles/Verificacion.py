@@ -15,6 +15,7 @@ class Verificacion():
         self.informacionCliente = tmp[0][0]
         self.informacionVenta = tmp[1]
         self.UIv = UI_verificacion(self.informacionCliente)
+        self.updateLWcodigos()
         self.UIv.sigFinalizarVenta.connect(self.finalizarVenta)
         self.UIv.sigHacerFactura.connect(self.hacerFactura)
         self.UIv.sigMandarCorreo.connect(self.enviarCodigos)
@@ -22,14 +23,15 @@ class Verificacion():
         
     # -----------------ListaCodigos-----------------
         # producto, cantidad, precio
-        self.venta = []
+    def updateLWcodigos(self):
+        venta = []
         for i in self.informacionVenta:
             codigos = getCodigosParaVender(i[0], i[1])
-            self.venta.append([i[0], codigos])
+            venta.append([i[0], codigos])
             self.UIv.addLWcodigos(i[0])
             self.UIv.pushCodigos(codigos)
-    
-        
+        self.informacionVenta = []
+        self.informacionVenta = venta
 
     # -----------------FUNCIONES-----------------
 
@@ -74,7 +76,7 @@ class Verificacion():
         self.UIv.enableBTfacturaCorreo(True)
 		
     def enviarCodigos(self):
-        hacerCodigos(self.venta)
+        hacerCodigos(self.informacionVenta)
         try:
             enviarCorreo("CODIGO",self.informacionCliente[8],None,None)
             self.UIv.enableBTcorreo(False)
