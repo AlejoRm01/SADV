@@ -22,13 +22,13 @@ class Verificacion():
         
     # -----------------ListaCodigos-----------------
         # producto, cantidad, precio
-        venta = []
+        self.venta = []
         for i in self.informacionVenta:
             codigos = getCodigosParaVender(i[0], i[1])
-            venta.append([i[0], codigos])
+            self.venta.append([i[0], codigos])
             self.UIv.addLWcodigos(i[0])
             self.UIv.pushCodigos(codigos)
-            
+    
         
 
     # -----------------FUNCIONES-----------------
@@ -60,6 +60,7 @@ class Verificacion():
             self.UIv.enableBTcorreo(False)
             self.UIv.throwMsgErrorProceso()
             print(e)
+            
     def hacerFactura(self):
         pathNombre = self.informacionCliente[3]
         buttonReply = self.UIv.getRDialog()
@@ -73,7 +74,7 @@ class Verificacion():
         self.UIv.enableBTfacturaCorreo(True)
 		
     def enviarCodigos(self):
-        hacerCodigos(self.informacionVenta)
+        hacerCodigos(self.venta)
         try:
             enviarCorreo("CODIGO",self.informacionCliente[8],None,None)
             self.UIv.enableBTcorreo(False)
