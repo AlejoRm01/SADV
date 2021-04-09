@@ -21,6 +21,7 @@ class Login():
             self.UIl.abrirInventario(Tipo_cuenta)
         else:
             self.UIl.throwMsgErrorProceso()
+
     
     def notificarIngreso(self):
         enviarCorreo("NOTIF_INGRESO", CORREO, None, self.usuario)

@@ -20,21 +20,7 @@ class UI_verificacion (QMainWindow):
         loadUi('UI/templates/Verificacion.ui', self)
         self.informacionCliente = informacionCliente
         self.setWindowIcon(QIcon(ICONO))
-        """# -----------------Botones-----------------
-        self.botonCorreo
-        self.botonFactura
-        self.botonFacturaCorreo
-        self.botonFinalizar
-        self.botonRegresar
-        self.botonRegresar_2
-        
-    # -----------------Listas-----------------
-        self.listaCodigos
-        
-    # -----------------Tabla-----------------
-        self.tablaClientes
-        self.tablaClientes_2
-        self.tablaClientes_3"""
+
     # -----------------TablaClientes1-------------------------
         self.tablaClientes.setEditTriggers(QAbstractItemView.NoEditTriggers)
         self.tablaClientes.setTextElideMode(Qt.ElideRight)
@@ -148,3 +134,21 @@ class UI_verificacion (QMainWindow):
         self.sigMandarCorreo.emit()
     def mandarFacturaCorreo(self):
         self.sigMandarFacturaCorreo.emit()
+        
+    """
+    # -----------------Botones-----------------
+        self.botonCorreo
+        self.botonFactura
+        self.botonFacturaCorreo
+        self.botonFinalizar
+        self.botonRegresar
+        self.botonRegresar_2
+        
+    # -----------------Listas-----------------
+        self.listaCodigos
+        
+    # -----------------Tabla-----------------
+        self.tablaClientes
+        self.tablaClientes_2
+        self.tablaClientes_3
+    """

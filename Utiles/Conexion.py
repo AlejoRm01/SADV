@@ -2,7 +2,7 @@ import pymongo
 from Utiles.Verificar import encriptar
 
 def conectar():
-   client = pymongo.MongoClient()
+   client = pymongo.MongoClient('localhost',27017)
    db = client['Diem']
    return db
 

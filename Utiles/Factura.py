@@ -13,7 +13,7 @@ def fecha():
     diasIngles = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
     diasEspanol = ["Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado", "Domingo"]
     mesIngles = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dic"]
-    mesEspanol = ["Ene", "Feb", "Mar", "Abri", "May", "Jun", "Jul", "Ago", "Sep", "Oct",
+    mesEspanol = ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct",
                   "Nov", "Dic"]
 
     aux = diasIngles.index(formato_tiempo[0])

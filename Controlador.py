@@ -1,7 +1,7 @@
 import sys
 from PyQt5 import QtCore, QtWidgets
 from PyQt5.QtWidgets import *
-from Paneles.Login import Login
+from Paneles.Login  import Login
 from Paneles.Inventario import Inventario
 from Paneles.Compra import Compra
 from Paneles.Venta import Venta

@@ -32,7 +32,7 @@ class UI_Inventario(QMainWindow):
         self.tablaInventario.setDragDropOverwriteMode(False)
         self.tablaInventario.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
         # -----------------Ancho columnas-----------------
-        for indice, ancho in enumerate((70, 90, 87, 500, 90, 150), start=0):
+        for indice, ancho in enumerate((70, 110, 87, 470, 100, 150), start=0):
             self.tablaInventario.setColumnWidth(indice, ancho)
         row = -1
         self.tablaInventario.setRowCount(row + 1)
