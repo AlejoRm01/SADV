@@ -150,7 +150,7 @@ def agregarUs(usuario,contraseña, tipoUsu) :
     try:
      db.Usuarios.insert({
         'Nombre del usuario' : usuario,
-        'Contraseña' : con,
+        'Contraseña' : con.decode('utf-8'),
         'Administrador' : tipoUsu
      })
      return True

@@ -33,7 +33,7 @@ def desencriptarContra(usuario):
             file.close()
             f2 = Fernet(key2)
             m = m.encode()
-            decrypted = f2.decrypt(m).decode()     
+            decrypted = f2.decrypt(m).decode()   
             return decrypted, bool(tipoCuenta[0])
 #------------------------Verificar---------------------------- ----
 
@@ -46,4 +46,3 @@ def verificar(usuario,contra):
     else:
         return entrar, tipoCuenta
     
-
